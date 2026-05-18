@@ -263,7 +263,7 @@ class TranslatorApp:
             return
             
         history_window = tk.Toplevel(self.root)
-        history_window.title("📜 Translation History")
+        history_window.title("Translation History")
         history_window.geometry("600x450")
         history_window.config(bg="#ffe6f2")
         

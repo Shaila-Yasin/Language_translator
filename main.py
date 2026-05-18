@@ -13,7 +13,7 @@ import time
 #  Initialize translator
 translator_client = Translator()
 
-#  Supported languages (At least 15)
+#  Supported languages
 LANG_CODES = {
     "Auto Detect": "auto",
     "English": "en",
@@ -44,7 +44,7 @@ history_list = []
 class TranslatorApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("🌸 Voice Translator 🌸")
+        self.root.title(" Voice Translator ")
         self.root.geometry("600x750")
         self.root.config(bg="#ffe6f2")
         
@@ -84,7 +84,7 @@ class TranslatorApp:
         frame.pack(padx=20, pady=10, fill="both", expand=True)
 
         #  Heading
-        tk.Label(frame, text="✨ Language Translator ✨",
+        tk.Label(frame, text=" Language Translator ",
                  font=("Comic Sans MS", 16, "bold"),
                  bg="#ffe6f2", fg="#ff1493").pack(pady=5)
 
@@ -115,8 +115,8 @@ class TranslatorApp:
         btn_frame = tk.Frame(frame, bg="#ffe6f2")
         btn_frame.pack(pady=10)
 
-        self.make_button(btn_frame, "🎤 Record Voice", lambda: threading.Thread(target=self.record_speech).start())
-        self.make_button(btn_frame, "💬 Translate Text", self.translate_text)
+        self.make_button(btn_frame, " Record Voice", lambda: threading.Thread(target=self.record_speech).start())
+        self.make_button(btn_frame, " Translate Text", self.translate_text)
 
         #  Target Language Selection
         tk.Label(frame, text="Select Target Language:",
@@ -150,8 +150,8 @@ class TranslatorApp:
         out_btn_frame = tk.Frame(frame, bg="#ffe6f2")
         out_btn_frame.pack(pady=10)
 
-        self.make_button(out_btn_frame, "🔊 Speak Translation", lambda: threading.Thread(target=self.speak_translation).start())
-        self.make_button(out_btn_frame, "📜 View History", self.show_history)
+        self.make_button(out_btn_frame, " Speak Translation", lambda: threading.Thread(target=self.speak_translation).start())
+        self.make_button(out_btn_frame, " View History", self.show_history)
 
     def make_button(self, parent, text, command):
         btn = tk.Button(parent, text=text, command=command,
